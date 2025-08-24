@@ -1,0 +1,19 @@
+spring:
+  application name: Student Attendance
+  datasource:
+    url: jdbc:mysql://localhost:3306/attendance_db?createDatabaseIfNotExist=true
+    username: root
+    password: shubham
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 8081
+
+logging:
+  file:
+    name: logs/spring.log
+  level:
+    root: INFO
+  com.AS.Student_Attendance: INFO
