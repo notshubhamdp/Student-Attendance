@@ -144,11 +144,63 @@
         <a href="/logout">Logout</a>
     </div>
     <div class="dashboard-cards">
-        <div class="card">
+        <div class="card" style="width:100%;max-width:900px;">
             <div class="card-title">Mark Attendance</div>
-            <form action="/attendance" method="get">
-                <button type="submit" class="btn">Go to Attendance</button>
+            <form id="attendanceForm" method="post" action="/attendance/mark" onsubmit="return handleAttendanceSubmit(event)">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Roll No</th>
+                            <th>Department</th>
+                            <th>Course</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="student : ${students}">
+                            <td th:text="${student.firstName + ' ' + student.lastName}"></td>
+                            <td th:text="${student.rollNo}"></td>
+                            <td th:text="${student.department}"></td>
+                            <td>
+                                <select th:name="'courseId_' + ${student.userId}">
+                                    <option th:each="course : ${courses}" th:value="${course.courseId}" th:text="${course.courseName}"></option>
+                                </select>
+                            </td>
+                            <td>
+                                <select th:name="'status_' + ${student.userId}">
+                                    <option value="true">Present</option>
+                                    <option value="false">Absent</option>
+                                    <option value="late">Late</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button type="submit" class="btn" th:name="'mark_' + ${student.userId}" th:value="${student.userId}">Mark</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </form>
+            <script>
+            function handleAttendanceSubmit(event) {
+                event.preventDefault();
+                const form = event.target;
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = '/reports';
+                    } else {
+                        alert('Attendance marking failed.');
+                    }
+                })
+                .catch(() => alert('Attendance marking failed.'));
+                return false;
+            }
+            </script>
         </div>
         <div class="card">
             <div class="card-title">View Attendance Records</div>

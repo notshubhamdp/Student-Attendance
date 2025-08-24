@@ -122,27 +122,16 @@
     </div>
     <div class="container">
         <h2>My Profile</h2>
-        <form method="post" action="/profile">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" th:value="${firstName}" required>
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" th:value="${lastName}" required>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" th:value="${email}" required>
-            <label for="phone">Phone Number</label>
-            <input type="text" id="phone" name="phone" th:value="${phone}" required pattern="[0-9]{10}" maxlength="10">
-            <label for="department">Department</label>
-            <input type="text" id="department" name="department" th:value="${department}" required>
-            <label for="role">Role</label>
-            <input type="text" id="role" name="role" th:value="${role}" required>
-            <label for="createdAt">Registration Time</label>
-            <input type="text" id="createdAt" name="createdAt" th:value="${createdAt}" readonly>
-            <label for="rollNo">Roll Number (if student)</label>
-            <input type="text" id="rollNo" name="rollNo" th:value="${rollNo}" readonly>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password">
-            <button type="submit" class="btn">Update Profile</button>
-        </form>
+        <div class="profile-details">
+            <p><strong>First Name:</strong> <span th:text="${firstName}"></span></p>
+            <p><strong>Last Name:</strong> <span th:text="${lastName}"></span></p>
+            <p><strong>Email:</strong> <span th:text="${email}"></span></p>
+            <p><strong>Phone Number:</strong> <span th:text="${phone}"></span></p>
+            <p><strong>Department:</strong> <span th:text="${department}"></span></p>
+            <p><strong>Role:</strong> <span th:text="${role}"></span></p>
+            <p><strong>Registration Time:</strong> <span th:text="${createdAt}"></span></p>
+            <p><strong>Roll Number (if student):</strong> <span th:text="${rollNo}"></span></p>
+        </div>
     </div>
 </body>
 </html>

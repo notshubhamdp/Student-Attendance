@@ -17,9 +17,13 @@ import java.time.LocalDate;
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+
 
 @Controller
 public class AttendanceController {
+	private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(AttendanceController.class);
+
 	@Autowired
 	private AttendanceRepository attendanceRepository;
 	@Autowired
@@ -31,10 +35,13 @@ public class AttendanceController {
 	@GetMapping("/attendance")
 	public String attendancePage(HttpSession session, Model model) {
 		String department = (String) session.getAttribute("department");
+		logger.info("[ATTENDANCE] Department from session: {}", department);
 		if (department == null) {
+			logger.warn("[ATTENDANCE] Department is null in session. Redirecting to login.");
 			return "redirect:/login";
 		}
 		List<User> students = userRepository.findByRoleAndStatusAndDepartment(com.AS.Student_Attendance.enumDto.Role.STUDENT, com.AS.Student_Attendance.enumDto.ApprovalStatus.APPROVED, department);
+		logger.info("[ATTENDANCE] Approved students found: {}", students.size());
 		List<Courses> courses = coursesRepository.findAll();
 		model.addAttribute("students", students);
 		model.addAttribute("courses", courses);
@@ -42,11 +49,36 @@ public class AttendanceController {
 	}
 
 	@PostMapping("/attendance/mark")
-	public String markAttendance(@RequestParam Integer userId, @RequestParam Integer courseId, @RequestParam Boolean present, HttpSession session) {
+	public String markAttendance(HttpSession session, @RequestParam(required = false) Integer mark_ , @RequestParam Map<String, String> params) {
+		// Find which student was marked
+		Integer userId = null;
+		for (String key : params.keySet()) {
+			if (key.startsWith("mark_")) {
+				userId = Integer.valueOf(params.get(key));
+				break;
+			}
+		}
+		if (userId == null) {
+			return "redirect:/teacher/dashboard";
+		}
+		String courseKey = "courseId_" + userId;
+		String statusKey = "status_" + userId;
+		Integer courseId = params.containsKey(courseKey) ? Integer.valueOf(params.get(courseKey)) : null;
+		String statusRaw = params.get(statusKey);
+		Boolean present = null;
+		if ("true".equalsIgnoreCase(statusRaw)) {
+			present = true;
+		} else if ("false".equalsIgnoreCase(statusRaw)) {
+			present = false;
+		} else if ("late".equalsIgnoreCase(statusRaw)) {
+			present = null;
+		}
+		logger.info("Attendance marking: userId={}, courseId={}, statusRaw={}, present={}", userId, courseId, statusRaw, present);
 		User student = userRepository.findById(userId).orElse(null);
-		Courses course = coursesRepository.findById(courseId).orElse(null);
-		if (student == null || course == null) {
-			return "redirect:/attendance";
+		Courses course = (courseId != null) ? coursesRepository.findById(courseId).orElse(null) : null;
+		if (student == null || course == null || statusRaw == null) {
+			logger.warn("Attendance marking failed: student={}, course={}, statusRaw={}", student, course, statusRaw);
+			return "redirect:/teacher/dashboard";
 		}
 		Attendance attendance = new Attendance();
 		attendance.setUser(student);
@@ -55,7 +87,8 @@ public class AttendanceController {
 		attendance.setPresent(present);
 		attendance.setCreatedAt(new Time(new Date().getTime()));
 		attendanceRepository.save(attendance);
-		return "redirect:/attendance";
+		logger.info("Attendance saved for userId={}, present={}", userId, present);
+		return "redirect:/teacher/dashboard";
 	}
 
 	// Student views their attendance

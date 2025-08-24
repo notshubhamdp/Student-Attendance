@@ -22,6 +22,9 @@ public class TeacherDashboardController {
 	@Autowired
 	private UserRepository userRepository;
 
+	@Autowired
+	private com.AS.Student_Attendance.repository.CoursesRepository coursesRepository;
+
 	@GetMapping("/dashboard")
 	public String teacherDashboard(HttpSession session, Model model) {
 		logger.info("Teacher dashboard endpoint triggered");
@@ -30,6 +33,8 @@ public class TeacherDashboardController {
 		if (department == null || department.isEmpty()) {
 			model.addAttribute("pendingStudents", List.of());
 			model.addAttribute("approvedStudents", List.of());
+			model.addAttribute("students", List.of());
+			model.addAttribute("courses", List.of());
 		} else {
 			List<User> pendingStudents = userRepository.findByRoleAndStatusAndDepartment(Role.STUDENT, ApprovalStatus.PENDING, department);
 			logger.info("Pending students found: {}", pendingStudents.size());
@@ -37,6 +42,9 @@ public class TeacherDashboardController {
 			List<User> approvedStudents = userRepository.findByRoleAndStatusAndDepartment(Role.STUDENT, ApprovalStatus.APPROVED, department);
 			logger.info("Approved students found: {}", approvedStudents.size());
 			model.addAttribute("approvedStudents", approvedStudents);
+			// For attendance marking table
+			model.addAttribute("students", approvedStudents);
+			model.addAttribute("courses", coursesRepository.findAll());
 		}
 		return "teacher_dashboard";
 	}

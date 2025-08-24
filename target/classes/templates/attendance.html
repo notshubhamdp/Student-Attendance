@@ -124,30 +124,34 @@
     <div class="header">Student Attendance System</div>
     <div class="navbar">
         <a href="/home">Home</a>
-        <a href="/teacher_dashboard">Dashboard</a>
-        <a href="/profile">Profile</a>
-        <a href="/logout">Logout</a>
+    <a href="/teacher/dashboard">Dashboard</a>
+    <a href="/profile">Profile</a>
+    <a href="/logout">Logout</a>
     </div>
     <div class="container">
         <h2 style="color:#0ea5e9; margin-bottom:24px;">Mark Attendance</h2>
-        <form method="post" action="/attendance">
+        <form method="post" action="/attendance/mark">
             <table>
                 <thead>
                     <tr>
-                        <th>Roll No</th>
                         <th>Name</th>
+                        <th>Roll No</th>
                         <th>Department</th>
                         <th>Course</th>
                         <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <tr th:if="${#lists.isEmpty(students)}">
+                        <td colspan="6" style="text-align:center;color:#ef4444;font-weight:600;">No approved students found.</td>
+                    </tr>
                     <tr th:each="student : ${students}">
-                        <td th:text="${student.rollNo}"></td>
                         <td th:text="${student.firstName + ' ' + student.lastName}"></td>
+                        <td th:text="${student.rollNo}"></td>
                         <td th:text="${student.department}"></td>
                         <td>
-                            <select th:name="{'course_' + ${student.userId}}">
+                            <select th:name="{'courseId_' + ${student.userId}}">
                                 <option th:each="course : ${courses}" th:value="${course.courseId}" th:text="${course.courseName}"></option>
                             </select>
                         </td>
@@ -157,10 +161,12 @@
                                 <option value="false">Absent</option>
                             </select>
                         </td>
+                        <td>
+                            <button type="submit" class="btn" th:name="'mark_' + ${student.userId}" th:value="${student.userId}">Mark</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
-            <button type="submit" class="btn">Submit Attendance</button>
         </form>
     </div>
 </body>

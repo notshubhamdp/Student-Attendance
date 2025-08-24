@@ -134,13 +134,21 @@
         <div class="floating-shape shape2"></div>
     <div class="header">Student Attendance System</div>
     <div class="navbar">
-        <a href="/home">Home</a>
-        <a href="/admin_dashboard">Dashboard</a>
-        <a href="/reports">Reports</a>
-        <a href="/logout">Logout</a>
+    <!-- Home button removed -->
+    <a href="/teacher/dashboard">Dashboard</a>
+    <a href="/profile">Profile</a>
+    <a href="/logout">Logout</a>
     </div>
     <div class="container">
         <h2>Attendance Reports</h2>
+        <div style="display:flex;gap:16px;justify-content:center;margin-bottom:20px;">
+            <button class="btn" onclick="showSection('present')">Present</button>
+            <button class="btn" onclick="showSection('absent')">Absent</button>
+            <button class="btn" onclick="showSection('late')">Late</button>
+        </div>
+        <div style="text-align:center;margin-bottom:24px;">
+            <input type="text" id="studentSearch" placeholder="Search student name..." style="padding:8px 16px;border-radius:8px;border:1px solid #bae6fd;width:260px;" onkeyup="filterStudents()">
+        </div>
         <form class="filter-form" method="get" action="/reports">
             <select name="student">
                 <option value="">All Students</option>
@@ -153,26 +161,109 @@
             <input type="date" name="date">
             <button type="submit" class="btn">Filter</button>
         </form>
-        <table>
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Student</th>
-                    <th>Course</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Example row, repeat for each record -->
-                <tr>
-                    <td>2025-08-23</td>
-                    <td>John Doe</td>
-                    <td>Computer Engineering</td>
-                    <td>Present</td>
-                </tr>
-                <!-- Add more rows dynamically -->
-            </tbody>
-        </table>
+
+        <div id="presentSection">
+            <h3 style="color:#22c55e;">Present</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Student</th>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="record : ${attendanceRecords.?[present == true or present == 'true' or present == 1]}" class="presentRow">
+                        <td th:text="${record.attendanceDate}"></td>
+                        <td th:text="${record.user.firstName + ' ' + record.user.lastName}"></td>
+                        <td th:text="${record.classEntity.courseName}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="absentSection" style="display:none;">
+            <h3 style="color:#ef4444;">Absent</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Student</th>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="record : ${attendanceRecords.?[present == false or present == 'false' or present == 0]}" class="absentRow">
+                        <td th:text="${record.attendanceDate}"></td>
+                        <td th:text="${record.user.firstName + ' ' + record.user.lastName}"></td>
+                        <td th:text="${record.classEntity.courseName}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="lateSection" style="display:none;">
+            <h3 style="color:#f59e42;">Late</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Student</th>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="record : ${attendanceRecords.?[present == null or present == 'null' or present == '' or present == 'late']}" class="lateRow">
+                        <td th:text="${record.attendanceDate}"></td>
+                        <td th:text="${record.user.firstName + ' ' + record.user.lastName}"></td>
+                        <td th:text="${record.classEntity.courseName}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="margin:32px 0;">
+            <h3 style="color:#64748b;">[Debug] Raw Attendance Records</h3>
+            <table style="background:#f1f5f9;">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Student</th>
+                        <th>Course</th>
+                        <th>Present</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="record : ${attendanceRecords}">
+                        <td th:text="${record.attendanceId}"></td>
+                        <td th:text="${record.attendanceDate}"></td>
+                        <td th:text="${record.user.firstName + ' ' + record.user.lastName}"></td>
+                        <td th:text="${record.classEntity.courseName}"></td>
+                        <td th:text="${record.present}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script>
+        function showSection(section) {
+            document.getElementById('presentSection').style.display = section === 'present' ? '' : 'none';
+            document.getElementById('absentSection').style.display = section === 'absent' ? '' : 'none';
+            document.getElementById('lateSection').style.display = section === 'late' ? '' : 'none';
+        }
+        function filterStudents() {
+            var input = document.getElementById('studentSearch').value.toLowerCase();
+            ['presentRow','absentRow','lateRow'].forEach(function(rowClass) {
+                var rows = document.getElementsByClassName(rowClass);
+                for (var i = 0; i < rows.length; i++) {
+                    var nameCell = rows[i].getElementsByTagName('td')[1];
+                    if (nameCell) {
+                        var name = nameCell.textContent.toLowerCase();
+                        rows[i].style.display = name.includes(input) ? '' : 'none';
+                    }
+                }
+            });
+        }
+        // Show Present section by default
+        showSection('present');
+        </script>
     </div>
 </body>
 </html>

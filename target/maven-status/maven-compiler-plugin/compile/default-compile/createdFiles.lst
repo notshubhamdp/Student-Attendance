@@ -18,6 +18,7 @@ com\AS\Student_Attendance\mapper\TeacherMapperImpl.class
 com\AS\Student_Attendance\repository\AttendanceRepository.class
 com\AS\Student_Attendance\mapper\CourseMapper.class
 com\AS\Student_Attendance\mapper\AttendanceMapper.class
+com\AS\Student_Attendance\restcontroller\StudentDashboardController.class
 com\AS\Student_Attendance\mapper\StudentMapperImpl.class
 com\AS\Student_Attendance\dto\StudentsDto.class
 com\AS\Student_Attendance\repository\StudentsRepository.class
@@ -29,6 +30,8 @@ com\AS\Student_Attendance\mapper\UserMapper.class
 com\AS\Student_Attendance\entity\User.class
 com\AS\Student_Attendance\enumDto\Role.class
 com\AS\Student_Attendance\entity\Courses.class
+com\AS\Student_Attendance\restcontroller\AttendanceController.class
+com\AS\Student_Attendance\restcontroller\ProfileController.class
 com\AS\Student_Attendance\dto\AttendanceDto.class
 com\AS\Student_Attendance\repository\CoursesRepository.class
 com\AS\Student_Attendance\restcontroller\LoginController.class

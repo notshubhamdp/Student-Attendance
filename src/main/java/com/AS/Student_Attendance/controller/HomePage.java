@@ -47,10 +47,6 @@ public class HomePage {
         return "courses";
     }
 
-    @GetMapping("/reports")
-    public String reports() {
-        return "reports";
-    }
 
 
     @GetMapping("/")
