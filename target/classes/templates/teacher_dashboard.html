@@ -143,6 +143,9 @@
         <a href="/profile">Profile</a>
         <a href="/logout">Logout</a>
     </div>
+    <div th:if="${session.attendanceMsg}" style="color:#22c55e;text-align:center;font-weight:600;margin:16px 0;">
+        <span th:text="${session.attendanceMsg}"></span>
+    </div>
     <div class="dashboard-cards">
         <div class="card" style="width:100%;max-width:900px;">
             <div class="card-title">Mark Attendance</div>

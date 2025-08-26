@@ -3,6 +3,7 @@ package com.AS.Student_Attendance.restcontroller;
 import com.AS.Student_Attendance.entity.Attendance;
 import com.AS.Student_Attendance.entity.User;
 import com.AS.Student_Attendance.entity.Courses;
+import com.AS.Student_Attendance.enumDto.AttendanceStatus;
 import com.AS.Student_Attendance.repository.AttendanceRepository;
 import com.AS.Student_Attendance.repository.UserRepository;
 import com.AS.Student_Attendance.repository.CoursesRepository;
@@ -65,30 +66,41 @@ public class AttendanceController {
 		String statusKey = "status_" + userId;
 		Integer courseId = params.containsKey(courseKey) ? Integer.valueOf(params.get(courseKey)) : null;
 		String statusRaw = params.get(statusKey);
-		Boolean present = null;
-		if ("true".equalsIgnoreCase(statusRaw)) {
-			present = true;
-		} else if ("false".equalsIgnoreCase(statusRaw)) {
-			present = false;
+		AttendanceStatus status = null;
+		if ("true".equalsIgnoreCase(statusRaw) || "present".equalsIgnoreCase(statusRaw)) {
+			status = AttendanceStatus.PRESENT;
+		} else if ("false".equalsIgnoreCase(statusRaw) || "absent".equalsIgnoreCase(statusRaw)) {
+			status = AttendanceStatus.ABSENT;
 		} else if ("late".equalsIgnoreCase(statusRaw)) {
-			present = null;
+			status = AttendanceStatus.LATE;
 		}
-		logger.info("Attendance marking: userId={}, courseId={}, statusRaw={}, present={}", userId, courseId, statusRaw, present);
+		logger.info("Attendance marking: userId={}, courseId={}, statusRaw={}, status={}", userId, courseId, statusRaw, status);
 		User student = userRepository.findById(userId).orElse(null);
 		Courses course = (courseId != null) ? coursesRepository.findById(courseId).orElse(null) : null;
-		if (student == null || course == null || statusRaw == null) {
-			logger.warn("Attendance marking failed: student={}, course={}, statusRaw={}", student, course, statusRaw);
+		if (student == null || course == null || status == null) {
+			logger.warn("Attendance marking failed: student={}, course={}, status={}", student, course, status);
 			return "redirect:/teacher/dashboard";
+		}
+		// Check for duplicate entry (same student, course, date)
+		LocalDate today = LocalDate.now();
+		boolean alreadyMarked = attendanceRepository.existsByUserUserIdAndClassEntityCourseIdAndAttendanceDate(
+			student.getUserId().longValue(), course.getCourseId().longValue(), today);
+		if (alreadyMarked) {
+			session.setAttribute("attendanceError", "Attendance already marked for this student and course today.");
+			return "redirect:/attendance";
 		}
 		Attendance attendance = new Attendance();
 		attendance.setUser(student);
 		attendance.setClassEntity(course);
-		attendance.setAttendanceDate(LocalDate.now());
-		attendance.setPresent(present);
+		attendance.setAttendanceDate(today);
+		logger.info("[ATTENDANCE DEBUG] Saving attendance: userId={}, courseId={}, status={}, statusRaw={}", userId, courseId, status, statusRaw);
+		attendance.setStatus(status);
 		attendance.setCreatedAt(new Time(new Date().getTime()));
 		attendanceRepository.save(attendance);
-		logger.info("Attendance saved for userId={}, present={}", userId, present);
-		return "redirect:/teacher/dashboard";
+		logger.info("Attendance saved for userId={}, status={}", userId, status);
+		session.setAttribute("attendanceMsg", "Attendance marked for " + student.getFirstName() + " as " + status.name().toLowerCase() + ".");
+		session.removeAttribute("attendanceError");
+		return "redirect:/attendance";
 	}
 
 	// Student views their attendance
@@ -103,6 +115,10 @@ public class AttendanceController {
 			return "redirect:/login";
 		}
 		List<Attendance> attendanceRecords = attendanceRepository.findByUser(student);
+		logger.info("[DEBUG] Fetching attendance for student: {} ({} records)", student.getUsername(), attendanceRecords.size());
+		for (Attendance rec : attendanceRecords) {
+			logger.info("[DEBUG] Attendance: date={}, course={}, status={}", rec.getAttendanceDate(), rec.getClassEntity().getCourseName(), rec.getStatus());
+		}
 		model.addAttribute("attendanceRecords", attendanceRecords);
 		return "student_attendance";
 	}

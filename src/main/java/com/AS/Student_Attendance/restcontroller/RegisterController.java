@@ -61,14 +61,19 @@ public class RegisterController {
                     // Only students require approval; teacher is auto-approved
                     if (role.equals("STUDENT")) {
                         user.setStatus(ApprovalStatus.PENDING);
+                        user.setRollNo(null);
+                        userRepository.save(user);
+                        logger.info("Student registered successfully: {}", user.getUsername());
+                        response.put("message", "Student registered successfully. Awaiting teacher approval.");
+                        return ResponseEntity.ok(response);
                     } else {
                         user.setStatus(ApprovalStatus.APPROVED);
+                        user.setRollNo(null);
+                        userRepository.save(user);
+                        logger.info("Teacher registered successfully: {}", user.getUsername());
+                        response.put("message", "Teacher registered successfully. No approval required.");
+                        return ResponseEntity.ok(response);
                     }
-                    user.setRollNo(null);
-                    userRepository.save(user);
-                    logger.info("User registered successfully: {}", user.getUsername());
-                    response.put("message", "User registered successfully. Awaiting teacher approval.");
-                    return ResponseEntity.ok(response);
                 } catch (org.springframework.dao.DataIntegrityViolationException ex) {
                     logger.error("Duplicate entry error during registration: {}", ex.getMessage());
                     response.put("message", "Email or username already exists. Please use a different one.");

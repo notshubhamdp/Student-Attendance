@@ -32,12 +32,12 @@ public class StudentAttendanceApplication {
 	@PostConstruct
 	public void init() {
 	User user = new User();
-	user.setFirstName("John");
-	user.setLastName("Doe");
+	user.setFirstName("Shubham");
+	user.setLastName("Patil");
 	String uniqueSuffix = String.valueOf(System.currentTimeMillis());
-	user.setUsername("john.doe" + uniqueSuffix);
-	user.setPassword("password123");
-	user.setEmail("john.doe" + uniqueSuffix + "@example.com");
+	user.setUsername("Shubham" + uniqueSuffix);
+	user.setPassword("Shubham");
+	user.setEmail("Shubham" + uniqueSuffix + "@example.com");
 	user.setRole(Role.ADMIN);
 	user.setCreatedAt(new java.sql.Time(System.currentTimeMillis()));
 	user.setStatus(ApprovalStatus.APPROVED);
@@ -57,7 +57,7 @@ public class StudentAttendanceApplication {
 	attendance.setUser(user);
 	attendance.setClassEntity(course);
 	attendance.setAttendanceDate(LocalDate.now());
-	attendance.setPresent(true);
+	attendance.setStatus(com.AS.Student_Attendance.enumDto.AttendanceStatus.PRESENT);
 	attendance.setCreatedAt(new java.sql.Time(System.currentTimeMillis()));
 	attendanceRepository.save(attendance);
 

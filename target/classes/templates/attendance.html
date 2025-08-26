@@ -156,9 +156,11 @@
                             </select>
                         </td>
                         <td>
-                            <select th:name="{'status_' + ${student.userId}}">
+                            <select th:name="{'status_' + ${student.userId}}" required>
+                                <option value="" disabled selected>Select status</option>
                                 <option value="true">Present</option>
                                 <option value="false">Absent</option>
+                                <option value="late">Late</option>
                             </select>
                         </td>
                         <td>
@@ -167,6 +169,12 @@
                     </tr>
                 </tbody>
             </table>
+            <div th:if="${attendanceMsg != null}" style="color:#22c55e;text-align:center;font-weight:600;margin-top:12px;">
+                <span th:text="${attendanceMsg}"></span>
+            </div>
+            <div th:if="${attendanceError != null}" style="color:#ef4444;text-align:center;font-weight:600;margin-top:12px;">
+                <span th:text="${attendanceError}"></span>
+            </div>
         </form>
     </div>
 </body>

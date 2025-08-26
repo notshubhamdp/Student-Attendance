@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-08-24T13:21:45+0530",
-    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.50.v20250729-0351, environment: Java 21.0.8 (Eclipse Adoptium)"
+    date = "2025-08-25T21:54:16+0530",
+    comments = "version: 1.6.3, compiler: javac, environment: Java 17.0.16 (Microsoft)"
 )
 @Component
 public class AttendanceMapperImpl implements AttendanceMapper {
@@ -21,12 +21,11 @@ public class AttendanceMapperImpl implements AttendanceMapper {
 
         Attendance attendance = new Attendance();
 
-        attendance.setAttendanceDate( attendanceDto.getAttendanceDate() );
         attendance.setAttendanceId( attendanceDto.getAttendanceId() );
-        attendance.setClassEntity( attendanceDto.getClassEntity() );
-        attendance.setCreatedAt( attendanceDto.getCreatedAt() );
-        attendance.setPresent( attendanceDto.getPresent() );
         attendance.setUser( attendanceDto.getUser() );
+        attendance.setClassEntity( attendanceDto.getClassEntity() );
+        attendance.setAttendanceDate( attendanceDto.getAttendanceDate() );
+        attendance.setCreatedAt( attendanceDto.getCreatedAt() );
 
         return attendance;
     }
@@ -39,12 +38,11 @@ public class AttendanceMapperImpl implements AttendanceMapper {
 
         AttendanceDto attendanceDto = new AttendanceDto();
 
-        attendanceDto.setAttendanceDate( attendance.getAttendanceDate() );
         attendanceDto.setAttendanceId( attendance.getAttendanceId() );
-        attendanceDto.setClassEntity( attendance.getClassEntity() );
-        attendanceDto.setCreatedAt( attendance.getCreatedAt() );
-        attendanceDto.setPresent( attendance.getPresent() );
         attendanceDto.setUser( attendance.getUser() );
+        attendanceDto.setClassEntity( attendance.getClassEntity() );
+        attendanceDto.setAttendanceDate( attendance.getAttendanceDate() );
+        attendanceDto.setCreatedAt( attendance.getCreatedAt() );
 
         return attendanceDto;
     }

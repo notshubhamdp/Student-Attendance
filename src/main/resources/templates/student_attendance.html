@@ -29,10 +29,10 @@
             </thead>
             <tbody>
                 <tr th:each="record : ${attendanceRecords}"
-                    th:classappend="${record.present == true} ? 'present' : (${record.present == false} ? 'absent' : 'late')">
+                    th:classappend="${record.status?.name() == 'PRESENT'} ? 'present' : (${record.status?.name() == 'ABSENT'} ? 'absent' : 'late')">
                     <td th:text="${record.attendanceDate}"></td>
                     <td th:text="${record.classEntity.courseName}"></td>
-                    <td th:text="${record.present == true ? 'Present' : (record.present == false ? 'Absent' : 'Late')}"></td>
+                    <td th:text="${record.status?.name() == 'PRESENT' ? 'Present' : (record.status?.name() == 'ABSENT' ? 'Absent' : 'Late')}"></td>
                 </tr>
             </tbody>
         </table>

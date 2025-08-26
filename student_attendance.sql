@@ -1,3 +1,11 @@
+-- ATTENDANCE TABLE (prevents duplicate entries for same student and date)
+CREATE TABLE attendance (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    date DATE NOT NULL,
+    status ENUM('Present','Absent','Late') DEFAULT 'Absent',
+    UNIQUE(student_id, date)
+);
 use attendance_db;
 -- STUDENTS TABLE
 
@@ -53,7 +61,7 @@ CREATE TABLE attendance (
     student_id INT,
     course_id INT,
     date DATE,
-    status ENUM('Present', 'Absent', 'Late') DEFAULT 'Absent',
+    status VARCHAR(16) NOT NULL,
     FOREIGN KEY (student_id) REFERENCES students(student_id),
     FOREIGN KEY (course_id) REFERENCES courses(course_id),
     UNIQUE(student_id, course_id, date)  -- prevent duplicate entries

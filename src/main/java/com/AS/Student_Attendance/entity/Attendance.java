@@ -7,11 +7,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-// ...existing code...
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import com.AS.Student_Attendance.enumDto.AttendanceStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,8 +39,9 @@ public class Attendance {
 
     @Column(name = "attendance_date", nullable = false)
     private LocalDate attendanceDate;
-    @Column(name = "present", nullable = false)
-    private Boolean present;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private AttendanceStatus status;
     @Column(name = "created_at", nullable = false)
     private Time createdAt;
 

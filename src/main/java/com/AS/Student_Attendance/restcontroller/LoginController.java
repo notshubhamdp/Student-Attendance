@@ -40,7 +40,7 @@ public class LoginController {
 			String username = payload.get("username");
 			String password = payload.get("password");
 			User user = userRepository.findByUsername(username);
-			if (user != null && user.getPassword().equals(password) && user.getRole().name().equals("STUDENT") && user.getDepartment().equalsIgnoreCase(department)) {
+					if (user != null && user.getPassword().equals(password) && user.getRole().name().equals("STUDENT") && user.getDepartment() != null && user.getDepartment().equalsIgnoreCase(department)) {
 				if (user.getStatus() == ApprovalStatus.APPROVED) {
 					response.put("success", true);
 					response.put("role", "STUDENT");
@@ -67,7 +67,7 @@ public class LoginController {
 			String username = payload.get("usernameTeacher");
 			String password = payload.get("passwordTeacher");
 			User user = userRepository.findByUsername(username);
-			if (user != null && user.getPassword().equals(password) && user.getRole().name().equals("TEACHER") && user.getDepartment().equalsIgnoreCase(department)) {
+					if (user != null && user.getPassword().equals(password) && user.getRole().name().equals("TEACHER") && user.getDepartment() != null && user.getDepartment().equalsIgnoreCase(department)) {
 				if (user.getStatus() == ApprovalStatus.APPROVED) {
 					response.put("success", true);
 					response.put("role", "TEACHER");

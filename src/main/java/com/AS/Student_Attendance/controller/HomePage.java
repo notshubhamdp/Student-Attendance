@@ -32,10 +32,6 @@ public class HomePage {
         return "dashboard";
     }
 
-    @GetMapping("/students")
-    public String students() {
-        return "students";
-    }
 
     @GetMapping("/teachers")
     public String teachers() {
@@ -69,10 +65,6 @@ public class HomePage {
         return "error";
     }
 
-    @GetMapping("/admin_dashboard")
-    public String adminDashboard() {
-        return "admin_dashboard";
-    }
 
     @GetMapping("/teacher_dashboard")
     public String teacherDashboard() {

@@ -173,7 +173,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="record : ${attendanceRecords.?[present == true or present == 'true' or present == 1]}" class="presentRow">
+                    <tr th:each="record : ${attendanceRecords.?[status?.name() == 'PRESENT']}" class="presentRow">
                         <td th:text="${record.attendanceDate}"></td>
                         <td th:text="${record.user.firstName + ' ' + record.user.lastName}"></td>
                         <td th:text="${record.classEntity.courseName}"></td>
@@ -192,7 +192,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="record : ${attendanceRecords.?[present == false or present == 'false' or present == 0]}" class="absentRow">
+                    <tr th:each="record : ${attendanceRecords.?[status?.name() == 'ABSENT']}" class="absentRow">
                         <td th:text="${record.attendanceDate}"></td>
                         <td th:text="${record.user.firstName + ' ' + record.user.lastName}"></td>
                         <td th:text="${record.classEntity.courseName}"></td>
@@ -211,33 +211,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="record : ${attendanceRecords.?[present == null or present == 'null' or present == '' or present == 'late']}" class="lateRow">
+                    <tr th:each="record : ${attendanceRecords.?[status?.name() == 'LATE']}" class="lateRow">
                         <td th:text="${record.attendanceDate}"></td>
                         <td th:text="${record.user.firstName + ' ' + record.user.lastName}"></td>
                         <td th:text="${record.classEntity.courseName}"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div style="margin:32px 0;">
-            <h3 style="color:#64748b;">[Debug] Raw Attendance Records</h3>
-            <table style="background:#f1f5f9;">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Date</th>
-                        <th>Student</th>
-                        <th>Course</th>
-                        <th>Present</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="record : ${attendanceRecords}">
-                        <td th:text="${record.attendanceId}"></td>
-                        <td th:text="${record.attendanceDate}"></td>
-                        <td th:text="${record.user.firstName + ' ' + record.user.lastName}"></td>
-                        <td th:text="${record.classEntity.courseName}"></td>
-                        <td th:text="${record.present}"></td>
                     </tr>
                 </tbody>
             </table>

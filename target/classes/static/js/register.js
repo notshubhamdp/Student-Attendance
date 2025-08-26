@@ -54,7 +54,7 @@ function checkUsernameUnique() {
 
 // AJAX registration logic to ensure role and status are set correctly
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form[action="/register"]');
+    const form = document.querySelector('form');
     if (!form) return;
     form.addEventListener('submit', function(e) {
         e.preventDefault();
