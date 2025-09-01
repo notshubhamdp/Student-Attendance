@@ -31,35 +31,19 @@ public class StudentAttendanceApplication {
 	
 	@PostConstruct
 	public void init() {
-	User user = new User();
-	user.setFirstName("Shubham");
-	user.setLastName("Patil");
-	String uniqueSuffix = String.valueOf(System.currentTimeMillis());
-	user.setUsername("Shubham" + uniqueSuffix);
-	user.setPassword("Shubham");
-	user.setEmail("Shubham" + uniqueSuffix + "@example.com");
-	user.setRole(Role.ADMIN);
-	user.setCreatedAt(new java.sql.Time(System.currentTimeMillis()));
-	user.setStatus(ApprovalStatus.APPROVED);
-	user.setRollNo(null);
-	userRepository.save(user);
+	
 
 
-	// Create and save a sample course
-	Courses course = new Courses();
-	course.setCourseName("Sample Course");
-	String uniqueCourseCode = "COURSE" + System.currentTimeMillis();
-	course.setCourseCode(uniqueCourseCode);
-	course.setCredits(3);
-	coursesRepository.save(course);
-
-	Attendance attendance = new Attendance();
-	attendance.setUser(user);
-	attendance.setClassEntity(course);
-	attendance.setAttendanceDate(LocalDate.now());
-	attendance.setStatus(com.AS.Student_Attendance.enumDto.AttendanceStatus.PRESENT);
-	attendance.setCreatedAt(new java.sql.Time(System.currentTimeMillis()));
-	attendanceRepository.save(attendance);
+	// Create and save actual courses
+	String[] courseNames = {"SEN", "OSY", "DAN"};
+	for (String courseName : courseNames) {
+		Courses course = new Courses();
+		course.setCourseName(courseName);
+		String uniqueCourseCode = courseName + System.currentTimeMillis();
+		course.setCourseCode(uniqueCourseCode);
+		course.setCredits(3);
+		coursesRepository.save(course);
+	}
 
 		System.out.println("Student Attendance has Started");
 	}

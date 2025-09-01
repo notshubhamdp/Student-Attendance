@@ -1,9 +1,12 @@
 spring:
-  application name: Student Attendance
+  application:
+    name: Student-Attendance
+  profiles:
+    active: dev
   datasource:
-    url: jdbc:mysql://localhost:3306/attendance_db?createDatabaseIfNotExist=true
-    username: root
-    password: shubham
+    url: "${DATABASE_URL:jdbc:postgresql://localhost:5432/attendance_db}"
+    username: "${DB_USER:root}"
+    password: "${DB_PASSWORD:shubham}"
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,4 +19,4 @@ logging:
     name: logs/spring.log
   level:
     root: INFO
-  com.AS.Student_Attendance: INFO
+    com.AS.Student_Attendance: INFO

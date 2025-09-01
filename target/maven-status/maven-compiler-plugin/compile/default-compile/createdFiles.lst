@@ -6,6 +6,7 @@ com\AS\Student_Attendance\enumDto\ApprovalStatus.class
 com\AS\Student_Attendance\mapper\CourseMapperImpl.class
 com\AS\Student_Attendance\mapper\AttendanceMapperImpl.class
 com\AS\Student_Attendance\repository\UserRepository.class
+com\AS\Student_Attendance\config\SecurityConfig.class
 com\AS\Student_Attendance\restcontroller\TeacherDashboardController.class
 com\AS\Student_Attendance\enumDto\AttendanceStatus.class
 com\AS\Student_Attendance\repository\TeachersRepository.class

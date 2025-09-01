@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AdminDashboardController {
+	// ...existing code...
 	@Autowired
 	private StudentsRepository studentsRepository;
 	@Autowired
@@ -26,7 +27,7 @@ public class AdminDashboardController {
 	}
 
 
-	@GetMapping("/reports")
+	@GetMapping("/admin/reports")
 	public String reportsPage(Model model) {
 		model.addAttribute("attendanceRecords", attendanceRepository.findAll());
 		return "reports";

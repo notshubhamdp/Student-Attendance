@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-08-25T21:54:15+0530",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 17.0.16 (Microsoft)"
+    date = "2025-09-01T12:46:04+0530",
+    comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 3.42.50.v20250729-0351, environment: Java 21.0.8 (Eclipse Adoptium)"
 )
 @Component
 public class StudentMapperImpl implements StudentMapper {
@@ -21,15 +21,15 @@ public class StudentMapperImpl implements StudentMapper {
 
         Students students = new Students();
 
-        students.setStudentId( studentsDto.getStudentId() );
-        students.setRollNo( studentsDto.getRollNo() );
+        students.setCreatedAt( studentsDto.getCreatedAt() );
+        students.setDepartment( studentsDto.getDepartment() );
+        students.setEmail( studentsDto.getEmail() );
         students.setFirstName( studentsDto.getFirstName() );
         students.setLastName( studentsDto.getLastName() );
-        students.setEmail( studentsDto.getEmail() );
         students.setPhone( studentsDto.getPhone() );
-        students.setDepartment( studentsDto.getDepartment() );
+        students.setRollNo( studentsDto.getRollNo() );
+        students.setStudentId( studentsDto.getStudentId() );
         students.setYear( studentsDto.getYear() );
-        students.setCreatedAt( studentsDto.getCreatedAt() );
 
         return students;
     }
@@ -42,15 +42,15 @@ public class StudentMapperImpl implements StudentMapper {
 
         StudentsDto studentsDto = new StudentsDto();
 
-        studentsDto.setStudentId( students.getStudentId() );
-        studentsDto.setRollNo( students.getRollNo() );
+        studentsDto.setCreatedAt( students.getCreatedAt() );
+        studentsDto.setDepartment( students.getDepartment() );
+        studentsDto.setEmail( students.getEmail() );
         studentsDto.setFirstName( students.getFirstName() );
         studentsDto.setLastName( students.getLastName() );
-        studentsDto.setEmail( students.getEmail() );
         studentsDto.setPhone( students.getPhone() );
-        studentsDto.setDepartment( students.getDepartment() );
+        studentsDto.setRollNo( students.getRollNo() );
+        studentsDto.setStudentId( students.getStudentId() );
         studentsDto.setYear( students.getYear() );
-        studentsDto.setCreatedAt( students.getCreatedAt() );
 
         return studentsDto;
     }

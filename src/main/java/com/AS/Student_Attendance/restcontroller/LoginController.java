@@ -12,6 +12,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/login")
 public class LoginController {
+	// ...existing code...
 
 	@Autowired
 	private UserRepository userRepository;
@@ -22,19 +23,6 @@ public class LoginController {
 		String department = payload.get("department");
 		Map<String, Object> response = new HashMap<>();
 
-		if ("ADMIN".equalsIgnoreCase(role)) {
-			String username = payload.get("usernameAdmin");
-			String password = payload.get("passwordAdmin");
-			if ("Admin".equals(username) && "Admin".equals(password)) {
-				response.put("success", true);
-				response.put("role", "ADMIN");
-				response.put("message", "Login successful");
-			} else {
-				response.put("success", false);
-				response.put("message", "Invalid admin credentials");
-			}
-			return response;
-		}
 
 		if ("STUDENT".equalsIgnoreCase(role)) {
 			String username = payload.get("username");
