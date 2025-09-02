@@ -34,17 +34,6 @@ public class StudentAttendanceApplication {
 	
 
 
-	// Create and save actual courses
-	String[] courseNames = {"SEN", "OSY", "DAN"};
-	for (String courseName : courseNames) {
-		Courses course = new Courses();
-		course.setCourseName(courseName);
-		String uniqueCourseCode = courseName + System.currentTimeMillis();
-		course.setCourseCode(uniqueCourseCode);
-		course.setCredits(3);
-		coursesRepository.save(course);
-	}
-
 		System.out.println("Student Attendance has Started");
 	}
 }
