@@ -105,7 +105,11 @@ public class HomePage {
     }
 
     @GetMapping("/student_dashboard")
+<<<<<<< HEAD
     public String myProfile(Model model, @SessionAttribute(name = "username", required = false) String username) {
+=======
+   public String myProfile(Model model, @SessionAttribute(name = "username", required = false) String username) {
+>>>>>>> 3a66f6cf4adba815ff6b50b74fe7ced4c18eebe2
         if (username != null) {
             User user = userService.getUserByUsername(username);
             model.addAttribute("user", user);
