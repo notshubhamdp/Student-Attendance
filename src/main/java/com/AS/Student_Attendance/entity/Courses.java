@@ -30,5 +30,8 @@ public class Courses {
     @Column(name = "credits", nullable = false)
     private Integer credits;
 
+    @Column(name = "branch", nullable = false)
+    private String branch;
+
     // Getters and Setters
 }

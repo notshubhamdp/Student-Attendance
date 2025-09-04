@@ -3,6 +3,8 @@ spring:
     name: Student-Attendance
   profiles:
     active: dev
+
+
   datasource:
     url: jdbc:postgresql://dpg-d2qkijur433s73eeutag-a.oregon-postgres.render.com:5432/attendance_db_119t
     username: root
