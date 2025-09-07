@@ -34,12 +34,11 @@ public class StudentAttendanceApplication {
 	
 
 
-<<<<<<< HEAD
+
 	// Create and save actual courses
 
 
-=======
->>>>>>> 3a66f6cf4adba815ff6b50b74fe7ced4c18eebe2
+
 		System.out.println("Student Attendance has Started");
 	}
 }

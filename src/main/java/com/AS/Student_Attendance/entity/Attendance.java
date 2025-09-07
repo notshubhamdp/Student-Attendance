@@ -34,8 +34,13 @@ public class Attendance {
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "course_id", referencedColumnName = "course_id", nullable = false)
-    private Courses classEntity;
+    @JoinColumn(name = "student_id", referencedColumnName = "id")
+    private Students student;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id", referencedColumnName = "courseId")
+    private Courses course;
+
 
     @Column(name = "attendance_date", nullable = false)
     private LocalDate attendanceDate;

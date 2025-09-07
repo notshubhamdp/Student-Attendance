@@ -2,10 +2,12 @@ package com.AS.Student_Attendance.controller;
 
 import com.AS.Student_Attendance.entity.Attendance;
 import com.AS.Student_Attendance.repository.AttendanceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 import jakarta.servlet.http.HttpSession;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AttendanceController {
@@ -28,7 +30,7 @@ public class AttendanceController {
         return "Attendance marked";
     }
 
-    @GetMapping("/attendance/student")
+    @GetMapping("/attendance")
     public Object viewStudentAttendance(HttpSession session) {
         String role = (String) session.getAttribute("role");
         Integer userId = (Integer) session.getAttribute("userId");
@@ -42,13 +44,4 @@ public class AttendanceController {
         java.util.List<Attendance> records = attendanceRepository.findByUser_UserId(userId);
         return records;
     }
-}
-
-@Controller
-class AttendancePageController {
-    @GetMapping("/attendance")
-    public String attendancePage() {
-        return "attendance"; // Thymeleaf template name
-    }
-    // Add other MVC methods as needed
 }

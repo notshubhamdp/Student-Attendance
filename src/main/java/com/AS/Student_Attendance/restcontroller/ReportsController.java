@@ -33,7 +33,7 @@ public class ReportsController {
 		}
 		if (courseId != null) {
 			attendanceRecords = attendanceRecords.stream()
-				.filter(a -> a.getClassEntity().getCourseId().equals(courseId))
+				   .filter(a -> a.getCourse().getCourseId().equals(courseId))
 				.toList();
 		}
 		if (date != null) {

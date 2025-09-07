@@ -1,51 +1,34 @@
 package com.AS.Student_Attendance.entity;
 
-import java.sql.Timestamp;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
-@Table(name = "students")
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-
+@NoArgsConstructor
+@AllArgsConstructor
 public class Students {
+
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-   @Column(name = "student_id")
-   private Integer studentId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-   @Column(name = "roll_no", nullable = false, unique = true)
-   private String rollNo;
+    private String firstName;
+    private String lastName;
+    private String rollNumber;
 
-   @Column(name = "first_name", nullable = false)
-   private String firstName;
+    @ManyToOne
+    @JoinColumn(name = "branch_id", nullable = false)
+    private Branch branch; // Each student belongs to one branch
 
-   @Column(name = "last_name", nullable = false)
-   private String lastName;
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Attendance> attendanceRecords; // Student’s attendance records
 
-   @Column(name = "email", nullable = false, unique = true)
-   private String email;
+    @Column(nullable = false, unique = true)
+    private String email;
 
-   @Column(name = "phone")
-   private String phone;
-
-   @Column(name = "department")
-   private String department;
-
-   @Column(name = "year")
-   private Integer year;
-
-   @Column(name = "created_at", nullable = false)
-   private Timestamp createdAt;
-
-    // Getters and Setters
 }
