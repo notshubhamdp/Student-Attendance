@@ -116,20 +116,72 @@
             .profile-card { padding: 16px 6px; }
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dashboardSection = document.getElementById('dashboard-section');
+            const profileSection = document.getElementById('profile-section');
+            const dashboardLink = document.querySelector('.navbar a[href="/student/dashboard"]');
+            const profileLink = document.querySelector('.navbar a[href="#profile-section"]');
+
+            // Show dashboard by default, hide profile
+            dashboardSection.style.display = 'block';
+            profileSection.style.display = 'none';
+
+            dashboardLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                dashboardSection.style.display = 'block';
+                profileSection.style.display = 'none';
+            });
+            profileLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                dashboardSection.style.display = 'none';
+                profileSection.style.display = 'block';
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="floating-shape shape1"></div>
     <div class="floating-shape shape2"></div>
+    <div class="header">Student Dashboard</div>
+    <div class="navbar">
+        <a href="/student/dashboard">Dashboard</a>
+        <a href="#profile-section">Profile</a>
+        <a href="/logout">Logout</a>
+    </div>
     <div class="container">
-        <div class="profile-card">
+        <!-- Dashboard Section -->
+        <div class="profile-card" id="dashboard-section">
             <h2>Welcome, <span th:text="${studentName}">Student Name</span></h2>
-            <p><strong>Department:</strong> <span th:text="${department}">[Department]</span></p>
-            <p><strong>Email:</strong> <span th:text="${email}">[Email]</span></p>
             <p><strong>Roll No:</strong> <span th:text="${rollNo}">[Roll Number]</span></p>
+            <p><strong>Department:</strong> <span th:text="${department}">[Department]</span></p>
+            <form action="/student/attendance" method="get" style="width:100%;">
+                <button type="submit" class="btn">View Attendance</button>
+            </form>
         </div>
-        <form action="/student/attendance" method="get" style="width:100%;">
-            <button type="submit" class="btn">View Attendance</button>
-        </form>
+        <!-- Profile Section -->
+        <div class="profile-card" id="profile-section" style="margin-top:32px;">
+            <h3 style="color:#0ea5e9;text-align:center;margin-bottom:18px;">Update Profile</h3>
+            <form action="/profile" method="post" style="width:100%;">
+                <div style="margin-bottom:12px;">
+                    <label for="firstName" style="font-weight:500;">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" th:value="${firstName}" required style="width:100%;padding:8px;border-radius:8px;border:1px solid #bae6fd;">
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label for="lastName" style="font-weight:500;">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" th:value="${lastName}" required style="width:100%;padding:8px;border-radius:8px;border:1px solid #bae6fd;">
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label for="email" style="font-weight:500;">Email:</label>
+                    <input type="email" id="email" name="email" th:value="${email}" required style="width:100%;padding:8px;border-radius:8px;border:1px solid #bae6fd;">
+                </div>
+                <div style="margin-bottom:12px;">
+                    <label for="phone" style="font-weight:500;">Phone:</label>
+                    <input type="text" id="phone" name="phone" th:value="${phone}" style="width:100%;padding:8px;border-radius:8px;border:1px solid #bae6fd;">
+                </div>
+                <button type="submit" class="btn">Save Profile</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

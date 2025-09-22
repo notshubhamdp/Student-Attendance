@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9f16ffed-7182-4cb1-9ae3-7c340083e987" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/codeql.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/spring.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/spring.log.2025-08-24.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/StudentAttendanceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/StudentAttendanceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/controller/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/controller/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/repository/AttendanceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/repository/AttendanceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/AdminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/AdminDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/AttendanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/AttendanceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/ReportsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/ReportsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/TeacherDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AS/Student_Attendance/restcontroller/TeacherDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/attendance.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/attendance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/reports.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/reports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/student_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/student_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teacher_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teacher_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_attendance.sql" beforeDir="false" afterPath="$PROJECT_DIR$/student_attendance.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/StudentAttendanceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/StudentAttendanceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/controller/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/controller/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/AttendanceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/AttendanceRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AdminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AdminDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AttendanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AttendanceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/ProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/ReportsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/ReportsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/TeacherDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/TeacherDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/attendance.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/attendance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/reports.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/reports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/student_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/AttendanceMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/AttendanceMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/CourseMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/CourseMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/StudentMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/StudentMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/TeacherMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/TeacherMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/UserMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2025-08-25T00-38-36_782-jvmRun1.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2025-08-25T00-38-36_782-jvmRun1.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.AS.Student_Attendance.StudentAttendanceApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.AS.Student_Attendance.StudentAttendanceApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.AS.Student_Attendance.StudentAttendanceApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.AS.Student_Attendance.StudentAttendanceApplicationTests.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="325y2oZTDUk0eErjtY0mzktoJH2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Student.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Shubham Patil/Downloads/TMS1-main/TMS1-main"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Student" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.AS.Student_Attendance.StudentAttendanceApplication" />
+      <module name="Student-Attendance" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f16ffed-7182-4cb1-9ae3-7c340083e987" name="Changes" comment="" />
+      <created>1756724523648</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756724523648</updated>
+    </task>
+    <servers />
+  </component>
+</project>

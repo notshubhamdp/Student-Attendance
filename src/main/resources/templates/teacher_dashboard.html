@@ -141,7 +141,7 @@
         <a href="/home">Home</a>
         <a href="/teacher/dashboard">Dashboard</a>
         <a href="/profile">Profile</a>
-        <a href="/logout">Logout</a>
+        <a href="/login">Logout</a>
     </div>
     <div th:if="${session.attendanceMsg}" style="color:#22c55e;text-align:center;font-weight:600;margin:16px 0;">
         <span th:text="${session.attendanceMsg}"></span>
@@ -149,44 +149,47 @@
     <div class="dashboard-cards">
         <div class="card" style="width:100%;max-width:900px;">
             <div class="card-title">Mark Attendance</div>
-            <form id="attendanceForm" method="post" action="/attendance/mark" onsubmit="return handleAttendanceSubmit(event)">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Roll No</th>
-                            <th>Department</th>
-                            <th>Course</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="student : ${students}">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Department</th>
+                        <th>Course</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="student : ${students}">
+                        <form th:action="@{/attendance/mark}" method="post" th:id="'attendanceForm_' + ${student.userId}" th:onsubmit="'return handleAttendanceSubmit(event, ' + ${student.userId} + ');'">
                             <td th:text="${student.firstName + ' ' + student.lastName}"></td>
                             <td th:text="${student.rollNo}"></td>
                             <td th:text="${student.department}"></td>
                             <td>
-                                <select th:name="'courseId_' + ${student.userId}">
+                                <select name="courseId" required>
+                                    <option value="" disabled selected>Select Course</option>
                                     <option th:each="course : ${courses}" th:value="${course.courseId}" th:text="${course.courseName}"></option>
                                 </select>
                             </td>
                             <td>
-                                <select th:name="'status_' + ${student.userId}">
+                                <select name="status" required>
+                                    <option value="" disabled selected>Select Status</option>
                                     <option value="true">Present</option>
                                     <option value="false">Absent</option>
                                     <option value="late">Late</option>
                                 </select>
                             </td>
                             <td>
-                                <button type="submit" class="btn" th:name="'mark_' + ${student.userId}" th:value="${student.userId}">Mark</button>
+                                <input type="hidden" name="userId" th:value="${student.userId}" />
+                                <button type="submit" class="btn">Mark</button>
                             </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
+                        </form>
+                    </tr>
+                </tbody>
+            </table>
             <script>
-            function handleAttendanceSubmit(event) {
+            function handleAttendanceSubmit(event, userId) {
                 event.preventDefault();
                 const form = event.target;
                 fetch(form.action, {
@@ -265,6 +268,29 @@
                 </thead>
                 <tbody>
                     <tr th:each="student : ${approvedStudents}">
+                        <td th:text="${student.firstName + ' ' + student.lastName}"></td>
+                        <td th:text="${student.username}"></td>
+                        <td th:text="${student.department}"></td>
+                        <td th:text="${student.email}"></td>
+                        <td th:text="${student.rollNo}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="rejected-students-section">
+            <h2 style="text-align:center;color:#ef4444;margin-top:40px;">Rejected Students</h2>
+            <table style="width:100%;margin-top:20px;border-collapse:collapse;">
+                <thead>
+                    <tr style="background:#fee2e2;">
+                        <th style="padding:10px;border:1px solid #e0e7ff;">Name</th>
+                        <th style="padding:10px;border:1px solid #e0e7ff;">Username</th>
+                        <th style="padding:10px;border:1px solid #e0e7ff;">Department</th>
+                        <th style="padding:10px;border:1px solid #e0e7ff;">Email</th>
+                        <th style="padding:10px;border:1px solid #e0e7ff;">Roll No.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="student : ${rejectedStudents}">
                         <td th:text="${student.firstName + ' ' + student.lastName}"></td>
                         <td th:text="${student.username}"></td>
                         <td th:text="${student.department}"></td>

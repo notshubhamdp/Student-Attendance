@@ -18,17 +18,29 @@ public class ReportsController {
 	@Autowired
 	private AttendanceRepository attendanceRepository;
 
-	@GetMapping("/admin/reports")
-	public String getAttendanceReports(Model model) {
+	@GetMapping("/reports")
+	public String getAttendanceReports(
+		@org.springframework.web.bind.annotation.RequestParam(value = "student", required = false) Integer studentId,
+		@org.springframework.web.bind.annotation.RequestParam(value = "course", required = false) Long courseId,
+		@org.springframework.web.bind.annotation.RequestParam(value = "date", required = false) java.time.LocalDate date,
+		Model model) {
 		List<Attendance> attendanceRecords = attendanceRepository.findAll();
-		for (Attendance a : attendanceRecords) {
-			logger.info("[REPORTS DEBUG] AttendanceId={}, User={}, Status={}, Date={}", a.getAttendanceId(), a.getUser().getUsername(), a.getStatus(), a.getAttendanceDate());
+		// Always show all records, but allow filtering if needed
+		if (studentId != null) {
+			attendanceRecords = attendanceRecords.stream()
+				.filter(a -> a.getUser().getUserId().equals(studentId))
+				.toList();
 		}
-		attendanceRecords.sort((a, b) -> {
-			String nameA = a.getUser().getFirstName() + " " + a.getUser().getLastName();
-			String nameB = b.getUser().getFirstName() + " " + b.getUser().getLastName();
-			return nameA.compareToIgnoreCase(nameB);
-		});
+		if (courseId != null) {
+			attendanceRecords = attendanceRecords.stream()
+				.filter(a -> a.getClassEntity().getCourseId().equals(courseId))
+				.toList();
+		}
+		if (date != null) {
+			attendanceRecords = attendanceRecords.stream()
+				.filter(a -> a.getAttendanceDate().equals(date))
+				.toList();
+		}
 		model.addAttribute("attendanceRecords", attendanceRecords);
 		return "reports";
 	}

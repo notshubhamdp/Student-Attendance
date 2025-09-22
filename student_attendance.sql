@@ -64,7 +64,7 @@ CREATE TABLE attendance (
     status VARCHAR(16) NOT NULL,
     FOREIGN KEY (student_id) REFERENCES students(student_id),
     FOREIGN KEY (course_id) REFERENCES courses(course_id),
-    UNIQUE(student_id, course_id, date)  -- prevent duplicate entries
+    UNIQUE(student_id, course_id, date)
 );
 
 

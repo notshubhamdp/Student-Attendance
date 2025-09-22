@@ -7,5 +7,7 @@ import java.util.List;
 public interface AttendanceRepository extends JpaRepository<Attendance,Long> {
 	List<Attendance> findByUser(com.AS.Student_Attendance.entity.User user);
 
+	List<Attendance> findByUserAndClassEntityCourseId(com.AS.Student_Attendance.entity.User user, Long courseId);
+
 	boolean existsByUserUserIdAndClassEntityCourseIdAndAttendanceDate(Long userId, Long courseId, java.time.LocalDate date);
 }

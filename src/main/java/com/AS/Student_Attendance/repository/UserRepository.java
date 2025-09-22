@@ -11,6 +11,9 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	boolean existsByUsername(String username);
 	boolean existsByEmail(String email);
 	User findByUsername(String username);
-	List<User> findByRoleAndStatus(com.AS.Student_Attendance.enumDto.Role role, com.AS.Student_Attendance.enumDto.ApprovalStatus status);
-	List<User> findByRoleAndStatusAndDepartment(com.AS.Student_Attendance.enumDto.Role role, com.AS.Student_Attendance.enumDto.ApprovalStatus status, String department);
+	// Only fetch students and teachers, ignore admin
+	List<User> findByRoleInAndStatus(List<com.AS.Student_Attendance.enumDto.Role> roles, com.AS.Student_Attendance.enumDto.ApprovalStatus status);
+	List<User> findByRoleInAndStatusAndDepartment(List<com.AS.Student_Attendance.enumDto.Role> roles, com.AS.Student_Attendance.enumDto.ApprovalStatus status, String department);
+
+	// New methods to fetch users by multiple roles (ignoring ADMIN)
 }

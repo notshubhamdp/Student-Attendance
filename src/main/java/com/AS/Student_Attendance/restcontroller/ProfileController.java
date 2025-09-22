@@ -54,6 +54,9 @@ public class ProfileController {
 		user.setPhone(updatedUser.getPhone());
 		user.setDepartment(updatedUser.getDepartment());
 		user.setPassword(updatedUser.getPassword());
+		if (user.getCreatedAt() == null) {
+			user.setCreatedAt(new java.sql.Time(new java.util.Date().getTime()));
+		}
 		userRepository.save(user);
 		return "redirect:/profile";
 	}

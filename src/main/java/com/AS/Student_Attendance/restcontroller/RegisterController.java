@@ -56,7 +56,7 @@ public class RegisterController {
                 try {
                     // Set createdAt if not provided
                     if (user.getCreatedAt() == null) {
-                        user.setCreatedAt(new Time(new Date().getTime()));
+                        user.setCreatedAt(new java.sql.Time(new java.util.Date().getTime()));
                     }
                     // Only students require approval; teacher is auto-approved
                     if (role.equals("STUDENT")) {
@@ -69,6 +69,9 @@ public class RegisterController {
                     } else {
                         user.setStatus(ApprovalStatus.APPROVED);
                         user.setRollNo(null);
+                        if (user.getCreatedAt() == null) {
+                            user.setCreatedAt(new java.sql.Time(new java.util.Date().getTime()));
+                        }
                         userRepository.save(user);
                         logger.info("Teacher registered successfully: {}", user.getUsername());
                         response.put("message", "Teacher registered successfully. No approval required.");

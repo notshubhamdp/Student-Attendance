@@ -33,15 +33,20 @@ public class TeacherDashboardController {
 		if (department == null || department.isEmpty()) {
 			model.addAttribute("pendingStudents", List.of());
 			model.addAttribute("approvedStudents", List.of());
+			model.addAttribute("rejectedStudents", List.of());
 			model.addAttribute("students", List.of());
 			model.addAttribute("courses", List.of());
 		} else {
-			List<User> pendingStudents = userRepository.findByRoleAndStatusAndDepartment(Role.STUDENT, ApprovalStatus.PENDING, department);
+			List<com.AS.Student_Attendance.enumDto.Role> allowedRoles = java.util.Arrays.asList(Role.STUDENT);
+			List<User> pendingStudents = userRepository.findByRoleInAndStatusAndDepartment(allowedRoles, ApprovalStatus.PENDING, department);
 			logger.info("Pending students found: {}", pendingStudents.size());
 			model.addAttribute("pendingStudents", pendingStudents);
-			List<User> approvedStudents = userRepository.findByRoleAndStatusAndDepartment(Role.STUDENT, ApprovalStatus.APPROVED, department);
+			List<User> approvedStudents = userRepository.findByRoleInAndStatusAndDepartment(allowedRoles, ApprovalStatus.APPROVED, department);
 			logger.info("Approved students found: {}", approvedStudents.size());
 			model.addAttribute("approvedStudents", approvedStudents);
+			List<User> rejectedStudents = userRepository.findByRoleInAndStatusAndDepartment(allowedRoles, ApprovalStatus.REJECTED, department);
+			logger.info("Rejected students found: {}", rejectedStudents.size());
+			model.addAttribute("rejectedStudents", rejectedStudents);
 			// For attendance marking table
 			model.addAttribute("students", approvedStudents);
 			model.addAttribute("courses", coursesRepository.findAll());
@@ -60,6 +65,9 @@ public String approveStudent(@RequestParam Integer userId, @RequestParam String 
 		}
 		student.setStatus(ApprovalStatus.APPROVED);
 		student.setRollNo(rollNo);
+		if (student.getCreatedAt() == null) {
+			student.setCreatedAt(new java.sql.Time(new java.util.Date().getTime()));
+		}
 		userRepository.save(student);
 	}
 	session.removeAttribute("approveError");
@@ -71,6 +79,9 @@ public String approveStudent(@RequestParam Integer userId, @RequestParam String 
 		User student = userRepository.findById(userId).orElse(null);
 		if (student != null) {
 			student.setStatus(ApprovalStatus.REJECTED);
+			if (student.getCreatedAt() == null) {
+				student.setCreatedAt(new java.sql.Time(new java.util.Date().getTime()));
+			}
 			userRepository.save(student);
 		}
 		return "redirect:/teacher/dashboard";
