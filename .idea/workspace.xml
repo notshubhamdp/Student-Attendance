@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="9f16ffed-7182-4cb1-9ae3-7c340083e987" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.github/workflows/codeql.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
@@ -36,10 +37,56 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AdminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AdminDashboardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AttendanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AttendanceController.class" afterDir="false" />
+=======
+    <list default="true" id="9aa7fb7f-65fd-4814-b0eb-6981dbb0c9fc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/spring.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/StudentAttendanceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/StudentAttendanceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/controller/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/controller/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/dto/AttendanceDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/dto/AttendanceDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/dto/CoursesDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/dto/CoursesDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/dto/StudentsDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/dto/StudentsDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/dto/TeachersDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/dto/TeachersDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/dto/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/entity/Attendance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/entity/Attendance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/entity/Courses.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/entity/Courses.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/entity/Students.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/entity/Students.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/entity/Teachers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/entity/Teachers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/enumDto/ApprovalStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/enumDto/ApprovalStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/enumDto/AttendanceStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/enumDto/AttendanceStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/enumDto/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/enumDto/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/AttendanceMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/AttendanceMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/AttendanceMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/AttendanceMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/CourseMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/CourseMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/CourseMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/CourseMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/StudentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/StudentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/StudentMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/StudentMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/TeacherMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/TeacherMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/TeacherMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/TeacherMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/UserMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/mapper/UserMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/AttendanceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/AttendanceRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/CoursesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/CoursesRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/StudentsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/StudentsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/TeachersRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/TeachersRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AdminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AdminDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AttendanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AttendanceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AttendanceRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/AttendanceRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/CoursesRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/CoursesRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/ErrorRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/ErrorRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/HomeRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/HomeRestController.class" afterDir="false" />
+>>>>>>> 7c9ad0ca1501f4f3551d1fc2b055a5056b42f060
       <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/ProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/ProfileController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/RegisterController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/ReportsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/ReportsController.class" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/TeacherDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/TeacherDashboardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/attendance.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/attendance.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
@@ -47,11 +94,18 @@
       <change beforePath="$PROJECT_DIR$/target/classes/templates/reports.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/reports.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/student_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/student_dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/teacher_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teacher_dashboard.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/StudentDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/StudentDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/StudentsRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/StudentsRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/TeacherDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/TeacherDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/TeachersRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AS/Student_Attendance/restcontroller/TeachersRestController.class" afterDir="false" />
+>>>>>>> 7c9ad0ca1501f4f3551d1fc2b055a5056b42f060
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/AttendanceMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/AttendanceMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/CourseMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/CourseMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/StudentMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/StudentMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/TeacherMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/TeacherMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/AS/Student_Attendance/mapper/UserMapperImpl.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
@@ -60,6 +114,11 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/2025-08-25T00-38-36_782-jvmRun1.dumpstream" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.AS.Student_Attendance.StudentAttendanceApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.AS.Student_Attendance.StudentAttendanceApplicationTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.AS.Student_Attendance.StudentAttendanceApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.AS.Student_Attendance.StudentAttendanceApplicationTests.txt" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.AS.Student_Attendance.StudentAttendanceApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.AS.Student_Attendance.StudentAttendanceApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.AS.Student_Attendance.StudentAttendanceApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.AS.Student_Attendance.StudentAttendanceApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/AS/Student_Attendance/StudentAttendanceApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/AS/Student_Attendance/StudentAttendanceApplicationTests.class" afterDir="false" />
+>>>>>>> 7c9ad0ca1501f4f3551d1fc2b055a5056b42f060
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,26 +128,49 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="325y2oZTDUk0eErjtY0mzktoJH2" />
+=======
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="325UlvkuvgAn9tO5lZoHBszTuW8" />
+>>>>>>> 7c9ad0ca1501f4f3551d1fc2b055a5056b42f060
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
     "Application.Student.executor": "Run",
+=======
+    "Application.Student-Attendance.executor": "Run",
+    "Application.StudentAttendanceApplication.executor": "Run",
+    "Maven.Student-Attendance [clean].executor": "Run",
+    "Maven.Student-Attendance [install].executor": "Run",
+    "Maven.Student-Attendance [package].executor": "Run",
+>>>>>>> 7c9ad0ca1501f4f3551d1fc2b055a5056b42f060
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+<<<<<<< HEAD
     "last_opened_file_path": "C:/Users/Shubham Patil/Downloads/TMS1-main/TMS1-main"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="Student" type="Application" factoryName="Application">
+=======
+    "last_opened_file_path": "C:/Users/Shubham Patil/OneDrive/Desktop/Student-Attendance/Student-Attendance"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Student-Attendance" type="Application" factoryName="Application">
+>>>>>>> 7c9ad0ca1501f4f3551d1fc2b055a5056b42f060
       <option name="MAIN_CLASS_NAME" value="com.AS.Student_Attendance.StudentAttendanceApplication" />
       <module name="Student-Attendance" />
       <method v="2">
@@ -99,6 +181,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="9f16ffed-7182-4cb1-9ae3-7c340083e987" name="Changes" comment="" />
       <created>1756724523648</created>
       <option name="number" value="Default" />
@@ -107,4 +190,19 @@
     </task>
     <servers />
   </component>
+=======
+      <changelist id="9aa7fb7f-65fd-4814-b0eb-6981dbb0c9fc" name="Changes" comment="" />
+      <created>1756710082899</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756710082899</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Student_Attendance$StudentAttendanceApplication.ic" NAME="StudentAttendanceApplication Coverage Results" MODIFIED="1756710200916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>com.AS.Student_Attendance.*</FILTER>
+    </SUITE>
+  </component>
+>>>>>>> 7c9ad0ca1501f4f3551d1fc2b055a5056b42f060
 </project>

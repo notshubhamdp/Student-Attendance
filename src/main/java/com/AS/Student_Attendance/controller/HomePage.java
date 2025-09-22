@@ -1,5 +1,6 @@
 package com.AS.Student_Attendance.controller;
 
+import com.AS.Student_Attendance.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,11 +12,20 @@ import com.AS.Student_Attendance.repository.UserRepository;
 import com.AS.Student_Attendance.entity.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.SessionAttribute;
+>>>>>>> 7c9ad0ca1501f4f3551d1fc2b055a5056b42f060
 
 @Controller
 public class HomePage {
     @Autowired
     private UserRepository userRepository;
+<<<<<<< HEAD
+=======
+    @Autowired
+    private UserService userService;
+>>>>>>> 7c9ad0ca1501f4f3551d1fc2b055a5056b42f060
     @PostMapping("/delete-account")
     public String deleteAccount(@AuthenticationPrincipal UserDetails principal, HttpServletRequest request) {
         if (principal != null) {
@@ -38,7 +48,11 @@ public class HomePage {
         if (session != null) {
             session.invalidate();
         }
+<<<<<<< HEAD
         return "redirect:/login";
+=======
+        return "redirect:/home";
+>>>>>>> 7c9ad0ca1501f4f3551d1fc2b055a5056b42f060
     }
 
     @GetMapping("/home")
@@ -101,32 +115,30 @@ public class HomePage {
     }
 
     @GetMapping("/student_dashboard")
-    public String studentDashboard(Model model) {
-        // For demo: get the first student user. In production, get from session/auth
-        User student = userRepository.findAll().stream()
-            .filter(u -> u.getRole().name().equals("STUDENT"))
-            .findFirst().orElse(null);
-    String studentName = student != null ? (student.getFirstName() + " " + student.getLastName()) : "Student";
-    model.addAttribute("studentName", studentName);
-    String department = student != null ? student.getDepartment() : "Department";
-    model.addAttribute("department", department);
-        String email = student != null ? student.getEmail() : "Email";
-        model.addAttribute("email", email);
-        String rollNo = "";
-        // If roll number is stored in User entity, fetch it. Otherwise, set as needed.
-        // Example: If you have getRollNo(), use student.getRollNo()
-        // For now, set as placeholder
-        if (student != null) {
-            try {
-                java.lang.reflect.Method method = student.getClass().getMethod("getRollNo");
-                rollNo = (String) method.invoke(student);
-            } catch (Exception e) {
+
+
+   public String myProfile(Model model, @SessionAttribute(name = "username", required = false) String username) {
+
+        if (username != null) {
+            User user = userService.getUserByUsername(username);
+            model.addAttribute("user", user);
+
+            String rollNo = "";
+            // If roll number is stored in User entity, fetch it. Otherwise, set as needed.
+            // Example: If you have getRollNo(), use student.getRollNo()
+            // For now, set as placeholder
+            if (user != null) {
+                try {
+                    java.lang.reflect.Method method = user.getClass().getMethod("getRollNo");
+                    rollNo = (String) method.invoke(user);
+                } catch (Exception e) {
+                    rollNo = "Assigned by Teacher";
+                }
+            } else {
                 rollNo = "Assigned by Teacher";
             }
-        } else {
-            rollNo = "Assigned by Teacher";
+            model.addAttribute("rollNo", rollNo);
         }
-        model.addAttribute("rollNo", rollNo);
         return "student_dashboard";
     }
     

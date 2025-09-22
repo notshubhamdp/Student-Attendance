@@ -152,9 +152,15 @@
     <div class="container">
         <!-- Dashboard Section -->
         <div class="profile-card" id="dashboard-section">
+<<<<<<< HEAD
             <h2>Welcome, <span th:text="${studentName}">Student Name</span></h2>
             <p><strong>Roll No:</strong> <span th:text="${rollNo}">[Roll Number]</span></p>
             <p><strong>Department:</strong> <span th:text="${department}">[Department]</span></p>
+=======
+            <h2>Welcome, <span th:text="${user.username}">Student Name</span></h2>
+            <p><strong>Roll No:</strong> <span th:text="${user.rollNo}">[Roll Number]</span></p>
+            <p><strong>Department:</strong> <span th:text="${user.department}">[Department]</span></p>
+>>>>>>> 7c9ad0ca1501f4f3551d1fc2b055a5056b42f060
             <form action="/student/attendance" method="get" style="width:100%;">
                 <button type="submit" class="btn">View Attendance</button>
             </form>

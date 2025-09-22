@@ -34,6 +34,7 @@ public class StudentAttendanceApplication {
 	
 
 
+<<<<<<< HEAD
 	// Create and save actual courses
 	String[] courseNames = {"SEN", "OSY", "DAN"};
 	for (String courseName : courseNames) {
@@ -44,6 +45,12 @@ public class StudentAttendanceApplication {
 		course.setCredits(3);
 		coursesRepository.save(course);
 	}
+=======
+
+	// Create and save actual courses
+
+
+>>>>>>> 7c9ad0ca1501f4f3551d1fc2b055a5056b42f060
 
 		System.out.println("Student Attendance has Started");
 	}

@@ -1,34 +1,26 @@
 package com.AS.Student_Attendance.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Column;
-import lombok.Data;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "courses")
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-
+@NoArgsConstructor
+@AllArgsConstructor
 public class Courses {
+
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    @Column(name = "course_id")
-    private Integer courseId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer courseId; // matches what @JoinColumn references
+    // matches DB column "course_id"
 
-    @Column(name = "course_name", nullable = false)
-    private String courseName;
-
-    @Column(name = "course_code", nullable = false, unique = true)
     private String courseCode;
-
-    @Column(name = "credits", nullable = false)
+    private String courseName;
     private Integer credits;
 
-    // Getters and Setters
+    @ManyToOne
+    @JoinColumn(name = "branch_id", nullable = false)
+    private Branch branch;
 }
