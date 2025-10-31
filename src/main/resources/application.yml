@@ -6,9 +6,9 @@ spring:
 
 
   datasource:
-    url: jdbc:postgresql://dpg-d2qkijur433s73eeutag-a.oregon-postgres.render.com:5432/attendance_db_119t
+    url: jdbc:postgresql://root:s6iy1Ot36XeOPI4SLLioMoh91figxsIG@dpg-d427k7c9c44c7385b0v0-a.oregon-postgres.render.com:5432/attendance_db_d0vz
     username: root
-    password: OkBnudnZL1U6F07bnPY45tvnAg59maPy
+    password: s6iy1Ot36XeOPI4SLLioMoh91figxsIG
 
   jpa:
     hibernate:
